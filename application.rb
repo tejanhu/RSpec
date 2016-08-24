@@ -6,6 +6,7 @@ class Person
     @surname=surname.capitalize
     @dob= Date.parse(dob)
     @fullname="#{@first_name} #{@surname}"
+    @emails = []
   end
   attr_reader :first_name, :surname, :dob, :fullname
 end
