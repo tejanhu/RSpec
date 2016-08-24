@@ -9,4 +9,10 @@ class Person
     @emails = []
   end
   attr_reader :first_name, :surname, :dob, :fullname
+
+  #setter method for email
+  def add_email(email)
+    @emails << email
+  end
+
 end
