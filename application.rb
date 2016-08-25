@@ -45,3 +45,9 @@ class Person
   end
 
 end
+
+class FamilyMember < Person
+  def initialize(first_name,surname,dob,relationship)
+     super(first_name,surname,dob)
+  end
+end

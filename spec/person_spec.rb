@@ -22,8 +22,6 @@ describe "Person class - entry in phonebook" do
     expect(person.remove_email 0).to eq "joe@foo.com"
     expect(person.emails).to eq ["joeBloggs@foo.com"]
     expect(person.remove_phone 0).to eq "07712345678"
-    # expect(person.to_s).to eq "Joe Bloggs was born on 1990-01-01.\n Their email addresses are: [\"joe@foo.com\"].\n Their phone numbers are [\"07712345678\", \"02012345678\"]"
-
 
 
   end
