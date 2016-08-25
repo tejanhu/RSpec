@@ -8,5 +8,16 @@ describe "Person class - entry in phonebook" do
     expect(person.first_name).to eq "Joe"
     expect(person.surname).to eq "Bloggs"
     expect(person.fullname).to eq "Joe Bloggs"
+
+    expect(person.emails).to eq []
+    person.add_email "joe@foo.com"
+    person.add_email "joeBloggs@foo.com"
+    expect(person.emails).to eq ["joe@foo.com","joeBloggs@foo.com"]
+
+    expect(person.phone_numbers).to eq []
+    
+
+
+    # expect(person.add_email).to eq "joe.bloggs@work.com"
   end
 end
