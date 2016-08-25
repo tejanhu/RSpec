@@ -53,4 +53,11 @@ class FamilyMember < Person
 end
 
 class AddressBook
+  def initialize()
+    @lists=[]
+  end
+
+  def list
+    @lists
+  end
 end
