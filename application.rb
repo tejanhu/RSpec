@@ -6,8 +6,7 @@ class Person
     @surname=surname.capitalize
     @dob= Date.parse(dob)
     @fullname="#{@first_name} #{@surname}"
-    @emails=[]
-    @phone_numbers=[]
+    @emails,@phone_numbers=[],[]
     @n = nil
   end
   attr_reader :first_name, :surname, :dob, :fullname
@@ -55,6 +54,15 @@ end
 class AddressBook
   def initialize()
     @lists=[]
+  end
+
+  #setter method for Person instance
+  def add_person person
+    person.is_a?(Person || FamilyMember) ? @lists.push(person.fullname) : error
+  end
+
+  def error
+    puts "Error!\nYou've not passed a Person nor FamilyMember object."
   end
 
   def list
