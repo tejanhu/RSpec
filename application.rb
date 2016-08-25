@@ -17,7 +17,7 @@ class Person
     @emails << email
   end
 
-  #setter method for email
+  #getter method for email
   def emails()
     @emails
   end
@@ -27,7 +27,7 @@ class Person
     @phone_numbers << phone
   end
   #
-  # #setter method for phone
+  # #getter method for phone
   def phone_numbers()
     @phone_numbers
   end
@@ -36,6 +36,12 @@ class Person
   def remove_email n
     @n=n
     @n != nil ? @emails.delete_at(@n) : "You have not entered an integer!"
+  end
+
+  #remove method deletes the first entry of the email addresses array
+  def remove_phone n
+    @n=n
+    @n != nil ? @phone_numbers.delete_at(@n) : "You have not entered an integer!"
   end
 
 end
