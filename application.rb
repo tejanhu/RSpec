@@ -51,3 +51,6 @@ class FamilyMember < Person
      super(first_name,surname,dob)
   end
 end
+
+class AddressBook
+end
