@@ -8,6 +8,7 @@ class Person
     @fullname="#{@first_name} #{@surname}"
     @emails=[]
     @phone_numbers=[]
+    @n = nil
   end
   attr_reader :first_name, :surname, :dob, :fullname
 
@@ -29,6 +30,12 @@ class Person
   # #setter method for phone
   def phone_numbers()
     @phone_numbers
+  end
+
+  #remove method deletes the first entry of the email addresses array
+  def remove_email n
+    @n=n
+    @n != nil ? @emails.delete_at(@n) : "You have not entered an integer!"
   end
 
 end
