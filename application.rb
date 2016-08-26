@@ -1,4 +1,5 @@
 require 'date'
+require 'yaml'
 class Person
 # Instance Variables contained within constructor
   def initialize(first_name,surname,dob)
@@ -56,9 +57,34 @@ class AddressBook
     @lists=[]
   end
 
+  def load_yaml
+    a_book = YAML.load_file "somebody.yml"
+    first_name = a_book['users']['person2']['first_name']
+    surname = a_book['users']['person2']['surname']
+    dob =a_book['users']['person2']['dob']
+    email1 = a_book['users']['person2']['emails'][0]
+    email2 = a_book['users']['person2']['emails'][1]
+    phone_number1 = a_book['users']['person2']['phone'][0]
+    phone_number2 = a_book['users']['person2']['phone'][1]
+
+    person = Person.new(first_name,surname,dob)
+    person.add_email email1
+    person.add_email email2
+    person.add_phone phone_number1
+    person.add_phone phone_number2
+
+    @lists << person
+    puts first_name, surname, dob, email1, email2, phone_number1, phone_number2
+  end
+
+  #setter method for Person instance
+  # def add_person person
+  #   person.is_a?(Person || FamilyMember) ? @lists.push(person.fullname) : error
+  # end
+
   #setter method for Person instance
   def add_person person
-    person.is_a?(Person || FamilyMember) ? @lists.push(person.fullname) : error
+    person.is_a?(FamilyMember) || person.is_a?(Person) ? (@lists.push(person.fullname)) : error
   end
 
   def error
@@ -66,6 +92,7 @@ class AddressBook
   end
 
   def list
-    @lists
+      @lists
+    
   end
 end

@@ -1,0 +1,21 @@
+users:
+  person1:
+      first_name: "hussein"
+      surname: "tejan"
+      dob: 04/08/1995
+      emails:
+        - "tejanahmedhu@gmail.com"
+        - "husseinbarkingabbey@hotmail.com"
+      phone:
+        - 07984623732
+        - 02085911783
+  person2:
+      first_name: "muhammad"
+      surname: "ali"
+      dob: 04/08/1995
+      emails:
+        - "muhammadali@gmail.com"
+        - "muhammadali@hotmail.com"
+      phone:
+        - 07984623732
+        - 02085911783
